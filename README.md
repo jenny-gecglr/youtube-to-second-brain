@@ -106,7 +106,7 @@ After you approve, the skill writes into your markdown knowledge base:
 - **Narrative formulas** (title, hook, body and call-to-action patterns) stored separately as patterns only.
 - An updated **index page** and one new **log line**.
 
-Contradictions with existing pages are shown to you separately, and claims without a source are labeled `[UNVERIFIED]`.
+Contradictions with existing pages are shown to you separately. Claims are labeled `[SOURCED]` when a video supports them and `[UNVERIFIED]` when they have no source.
 
 ## Video selection rules
 
