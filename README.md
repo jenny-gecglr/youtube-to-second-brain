@@ -20,7 +20,7 @@ Learning from a whole YouTube channel by hand takes days. Pasting every transcri
 ## How it works
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["Channel or video link"] --> B["Script lists videos<br/>(yt-dlp)"]
     B --> C["NotebookLM:<br/>verbatim transcripts<br/>and summaries"]
     C --> D["Cheap model<br/>organizes files"]
