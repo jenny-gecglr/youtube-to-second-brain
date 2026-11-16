@@ -1,6 +1,6 @@
 # YouTube to Second Brain
 
-![YouTube to Second Brain](assets/banner.svg)
+![YouTube to Second Brain](assets/banner.jpg)
 
 > Turn a YouTube channel or video into verified, linked notes in your own knowledge base, without spending your best model's budget.
 
@@ -8,7 +8,7 @@
 ![Claude Code skill](https://img.shields.io/badge/Claude%20Code-skill-blueviolet)
 ![Approval first](https://img.shields.io/badge/notes%20written%20only%20after-your%20approval-brightgreen)
 
-**Contents:** [Why](#why-this-exists) · [How it works](#how-it-works) · [Who does what](#who-does-what) · [What you get](#what-you-get) · [Video selection](#video-selection-rules) · [Guardrails](#guardrails) · [Requirements](#requirements) · [Install](#install) · [Example prompts](#example-prompts) · [Example conversation](#example-conversation) · [FAQ](#faq) · [Limitations](#limitations) · [License](#license)
+**Contents:** [Why](#why-this-exists) · [How it works](#how-it-works) · [Who does what](#who-does-what) · [What you get](#what-you-get) · [Video selection](#video-selection-rules) · [Guardrails](#guardrails) · [Requirements](#requirements) · [Install](#install) · [Example prompts](#example-prompts) · [Example conversation](#example-conversation) · [FAQ](#faq) · [Limitations](#limitations) · [Credits](#credits) · [License](#license)
 
 ## Why this exists
 
@@ -22,6 +22,7 @@ Learning from a whole YouTube channel by hand takes days. Pasting every transcri
 ## How it works
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Georgia, serif","primaryColor":"#4D1C2C","primaryTextColor":"#C7B3A3","primaryBorderColor":"#A3787B","lineColor":"#A3787B","tertiaryTextColor":"#C7B3A3","edgeLabelBackground":"#4D1C2C"}}}%%
 flowchart TD
     A["Channel or video link"] --> B["Script lists videos<br/>(yt-dlp)"]
     B --> C["NotebookLM:<br/>verbatim transcripts<br/>and summaries"]
@@ -30,6 +31,14 @@ flowchart TD
     E --> F{"You approve?"}
     F -- yes --> G["Notes written to<br/>your knowledge base"]
     F -- no --> H["No notes written<br/>(only the raw folder is filled)"]
+    classDef base fill:#4D1C2C,stroke:#A3787B,color:#C7B3A3,stroke-width:1.5px
+    classDef ask fill:#77732C,stroke:#C7B3A3,color:#F2E8DD,stroke-width:1.5px
+    classDef done fill:#8F8E66,stroke:#C7B3A3,color:#1D0C15,stroke-width:1.5px
+    classDef stop fill:#2A0F19,stroke:#A3787B,color:#B8A292,stroke-width:1.5px
+    class A,B,C,D,E base
+    class F ask
+    class G done
+    class H stop
 ```
 
 | # | Step | What happens |
@@ -149,6 +158,10 @@ Claude: Written: source cards, lesson pages, rule pages, the hub page, the
 - It depends on NotebookLM and its CLI being available and logged in.
 - NotebookLM reads speech only. For videos where code or screen content matters, a video-capable model can fill the gaps, on the videos you choose.
 - The quality of the notes depends on the transcripts that exist for the videos.
+
+## Credits
+
+The visual identity of this repository (its color palette and art direction) is the author's own. The banner illustration was generated with Google Flow (Nano Banana) from original prompts, and the lettering was added afterwards. The title is set in Cinzel Decorative, the script line in Pinyon Script and the subtitle in Cormorant Garamond, all under the SIL Open Font License.
 
 ## License
 
