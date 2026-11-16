@@ -8,7 +8,7 @@
 ![Claude Code skill](https://img.shields.io/badge/Claude%20Code-skill-blueviolet)
 ![Approval first](https://img.shields.io/badge/notes%20written%20only%20after-your%20approval-brightgreen)
 
-**Contents:** [Why](#why-this-exists) · [Learn, store, apply](#learn-store-apply) · [How it works](#how-it-works) · [Who does what](#who-does-what) · [What you get](#what-you-get) · [Video selection](#video-selection-rules) · [Guardrails](#guardrails) · [Requirements](#requirements) · [Install](#install) · [Example prompts](#example-prompts) · [Example conversation](#example-conversation) · [FAQ](#faq) · [Limitations](#limitations) · [Credits](#credits) · [License](#license)
+**Contents:** [Why](#why-this-exists) · [Learn, store, apply](#learn-store-apply) · [What makes it different](#what-makes-it-different) · [How it works](#how-it-works) · [Who does what](#who-does-what) · [What you get](#what-you-get) · [Video selection](#video-selection-rules) · [Guardrails](#guardrails) · [Requirements](#requirements) · [Install](#install) · [Example prompts](#example-prompts) · [Example conversation](#example-conversation) · [FAQ](#faq) · [Limitations](#limitations) · [Credits](#credits) · [License](#license)
 
 ## Why this exists
 
@@ -39,6 +39,17 @@ This skill takes a different route. Instead of watching, and instead of burning 
 - **Nothing is redone.** A resume file remembers every video, so a quota limit or error does not restart the job, and later runs only handle new videos.
 
 You stay in control the whole way: nothing is written to your knowledge base until you say yes.
+
+## What makes it different
+
+These are methods the author worked out by trying them, and they are the heart of the skill:
+
+- **Transcripts are never touched by a model.** `nlm source content` saves the verbatim text straight to a file. Summaries are labeled as NotebookLM's, and only the transcript counts as verbatim.
+- **Cheap models sort, strong models check.** A low-cost model files and pairs things up; your strong model only verifies and presents. Unchecked work does not pass.
+- **Facts are grepped, not trusted.** A script looks up every number and name in the transcript before a model spot-checks anything.
+- **A smart video selection rule.** All videos up to 80, otherwise the 80 most viewed of the last 6 months plus the top all-time ones, capped at 130, with a second model scanning for important videos the view counts missed.
+- **Resume, never restart.** A per-channel resume file survives quota limits and errors.
+- **Nothing is written without your yes.** Only the raw folder may be filled before you approve.
 
 ## How it works
 
@@ -118,13 +129,16 @@ A per-channel `_processed.json` resume file records progress, so after a quota l
 
 ## Requirements
 
-| Needed | For |
-|---|---|
-| Claude Code (or another Claude client with skills) | Running the skill |
-| `yt-dlp` | Video lists, exact metadata |
-| NotebookLM and its CLI (`nlm`) | Transcripts and summaries |
-| A markdown knowledge base (an Obsidian vault works well) | Where the notes are written |
-| Optional: a second model CLI such as Gemini | Simple judgment tasks |
+Everything below is checked on the first run, and the skill offers to install what is missing (it always asks first).
+
+| Needed | For | How it is set up |
+|---|---|---|
+| Claude Code (or another Claude client with skills) | Running the skill | Install Claude Code |
+| `yt-dlp` (+ Node.js) | Video lists, exact metadata | `pip install yt-dlp`; Node.js only if YouTube extraction fails |
+| NotebookLM and its CLI (`nlm`) | Transcripts and summaries | `uv tool install notebooklm-mcp-cli`, then `nlm login --storage protected` (you sign in to Google yourself) |
+| A markdown knowledge base (an Obsidian vault works well) | Where the notes are written | Any folder of markdown files |
+| Optional: a second model CLI (Gemini CLI or Antigravity CLI) | The "second model scan" for important videos and other simple judgment tasks | Install and sign in. Without it, a cheaper Claude model does these tasks. |
+| Optional: a video-capable model | Videos where code or screen content matters | Only for the videos you choose |
 
 ## Install
 
