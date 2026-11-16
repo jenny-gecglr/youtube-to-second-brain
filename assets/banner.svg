@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" viewBox="0 0 1280 300" role="img" aria-label="YouTube to Second Brain">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c1613"/>
+      <stop offset="1" stop-color="#1a2e26"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.55" r="0.6">
+      <stop offset="0" stop-color="#e5b675" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#e5b675" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="300" fill="url(#bg)"/>
+  <ellipse cx="1130" cy="165" rx="190" ry="170" fill="url(#glow)"/>
+  <rect x="14" y="14" width="1252" height="272" rx="6" fill="none" stroke="#e5b675" stroke-opacity="0.55" stroke-width="1.5"/>
+  <rect x="24" y="24" width="1232" height="252" rx="3" fill="none" stroke="#e5b675" stroke-opacity="0.25" stroke-width="1"/>
+  <g fill="#e5b675" fill-opacity="0.7"><circle cx="14" cy="14" r="4"/><circle cx="1266" cy="14" r="4"/><circle cx="14" cy="286" r="4"/><circle cx="1266" cy="286" r="4"/></g>
+  <text x="84" y="108" font-family="Georgia, 'Times New Roman', serif" font-size="15" letter-spacing="6" fill="#36946f">CLAUDE  CODE  SKILL</text>
+  <text x="84" y="168" font-family="Georgia, 'Times New Roman', serif" font-size="60" font-style="italic" fill="#f3ede4">YouTube to Second Brain</text>
+  <text x="84" y="212" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#bfae94">Verified, linked notes from a channel or a video.</text>
+  <text x="84" y="248" font-family="Georgia, 'Times New Roman', serif" font-size="17" letter-spacing="2" fill="#7f8f84">yt-dlp  ·  NotebookLM  ·  you approve before anything is written</text>
+  <g transform="translate(1055 38)">
+    <path d="M0 224 L0 96 Q0 24 75 0 Q150 24 150 96 L150 224 Z" fill="#0c1613" fill-opacity="0.65" stroke="#e5b675" stroke-width="2.5"/>
+    <path d="M10 214 L10 98 Q10 36 75 14 Q140 36 140 98 L140 214 Z" fill="none" stroke="#e5b675" stroke-opacity="0.35" stroke-width="1"/>
+    <g stroke="#36946f" stroke-width="2.5" stroke-linecap="round">
+      <line x1="75" y1="128" x2="75" y2="70"/><line x1="75" y1="128" x2="38" y2="98"/><line x1="75" y1="128" x2="112" y2="98"/>
+      <line x1="75" y1="128" x2="46" y2="176"/><line x1="75" y1="128" x2="106" y2="176"/><line x1="38" y1="98" x2="75" y2="70"/><line x1="112" y1="98" x2="75" y2="70"/>
+    </g>
+    <circle cx="75" cy="128" r="13" fill="#e5b675"/>
+    <g fill="#36946f"><circle cx="75" cy="70" r="8"/><circle cx="38" cy="98" r="8"/><circle cx="112" cy="98" r="8"/><circle cx="46" cy="176" r="8"/><circle cx="106" cy="176" r="8"/></g>
+  </g>
+</svg>

@@ -1,12 +1,14 @@
 # YouTube to Second Brain
 
+![YouTube to Second Brain](assets/banner.svg)
+
 > Turn a YouTube channel or video into verified, linked notes in your own knowledge base, without spending your best model's budget.
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Claude Code skill](https://img.shields.io/badge/Claude%20Code-skill-blueviolet)
 ![Approval first](https://img.shields.io/badge/notes%20written%20only%20after-your%20approval-brightgreen)
 
-**Contents:** [Why](#why-this-exists) · [How it works](#how-it-works) · [Who does what](#who-does-what) · [What you get](#what-you-get) · [Video selection](#video-selection-rules) · [Guardrails](#guardrails) · [Requirements](#requirements) · [Install](#install) · [Example prompts](#example-prompts) · [FAQ](#faq) · [Limitations](#limitations) · [License](#license)
+**Contents:** [Why](#why-this-exists) · [How it works](#how-it-works) · [Who does what](#who-does-what) · [What you get](#what-you-get) · [Video selection](#video-selection-rules) · [Guardrails](#guardrails) · [Requirements](#requirements) · [Install](#install) · [Example prompts](#example-prompts) · [Example conversation](#example-conversation) · [FAQ](#faq) · [Limitations](#limitations) · [License](#license)
 
 ## Why this exists
 
@@ -109,6 +111,26 @@ Or download the folder and place it at `~/.claude/skills/youtube-to-second-brain
 - "Add this channel to my second brain: `<channel link>`"
 - "Summarize this video and file it in my notes: `<video link>`"
 - "Check this channel for new videos since last time."
+
+## Example conversation
+
+An illustration of the flow (the names and numbers are made up):
+
+```text
+You:    Add this channel to my second brain: <channel link>
+Claude: The channel has 212 videos, so I selected the 80 most viewed of the
+        last 6 months plus the top all-time videos not already included.
+        Do you want the Shorts included?
+You:    No.
+Claude: Transcripts and summaries are ready. The check report: 3 figures were
+        not found in the transcripts and were corrected, and 4 videos have no
+        transcript, so they are marked "unavailable". Contradictions with your
+        existing pages are listed separately.
+        Write this to the knowledge base?
+You:    Yes.
+Claude: Written: source cards, lesson pages, rule pages, the hub page, the
+        index entry and one log line.
+```
 
 ## FAQ
 
